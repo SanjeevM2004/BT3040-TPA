@@ -9,17 +9,17 @@ import propy.PseudoAAC as pp
 import propy.AAComposition as pa
 
 # Load models and label encoder
-svm_model = joblib.load('svm_model.pkl')
-logistic_regression_model = joblib.load('logistic_regression_model.pkl')
-decision_tree_model = joblib.load('decision_tree_model.pkl')
-catboost_model = joblib.load('catboost_model.pkl')
-label_encoder = joblib.load('label_encoder.pkl')
+svm_model = joblib.load('models/svm_model.pkl')
+logistic_regression_model = joblib.load('models/logistic_regression_model.pkl')
+decision_tree_model = joblib.load('models/decision_tree_model.pkl')
+catboost_model = joblib.load('models/catboost_model.pkl')
+label_encoder = joblib.load('models/label_encoder.pkl')
 
 # Load PCA models
-pca_models = {pca_value: joblib.load(f'pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
-decision_tree_pca_models = {pca_value: joblib.load(f'decision_tree_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
-svm_pca_models = {pca_value: joblib.load(f'svm_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
-logistic_regression_pca_models = {pca_value: joblib.load(f'logistic_regression_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
+pca_models = {pca_value: joblib.load(f'models/pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
+decision_tree_pca_models = {pca_value: joblib.load(f'models/decision_tree_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
+svm_pca_models = {pca_value: joblib.load(f'models/svm_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
+logistic_regression_pca_models = {pca_value: joblib.load(f'models/logistic_regression_pca_{pca_value}.pkl') for pca_value in [5, 10, 20]}
 
 # List of standard amino acids
 standard_amino_acids = set('ACDEFGHIKLMNPQRSTVWY')
