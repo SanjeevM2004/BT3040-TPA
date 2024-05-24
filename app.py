@@ -68,7 +68,7 @@ def predict_ensemble(models, pca_models, features):
     return original_predictions, pca_predictions, ensemble_prediction
 
 # Streamlit app
-st.title("Ensemble Model Prediction App")
+st.title("AMP Prediction App")
 
 # Sidebar for user input
 st.sidebar.header("User Input Parameters")
@@ -78,6 +78,8 @@ def user_input_features():
     return sequence
 
 sequence = user_input_features()
+
+feature_info = pd.read_excel('Feature_Information.xlsx')
 
 if sequence:
     st.subheader('User Input Sequence')
@@ -89,8 +91,18 @@ if sequence:
 
     st.subheader('Extracted Features')
     st.write(features_df)
-
-    # Load models
+    # Add a button
+    if 'show_df' not in st.session_state:
+        st.session_state.show_df = False
+    
+    # Add a button to toggle the DataFrame display
+    if st.button('Details'):
+        st.session_state.show_df = not st.session_state.show_df
+    
+    # Display the DataFrame based on the session state
+    if st.session_state.show_df:
+        st.write(feature_info)
+        
     models = [svm_model, logistic_regression_model, decision_tree_model, catboost_model]
 
     # Make ensemble prediction
@@ -130,4 +142,4 @@ if sequence:
 
     st.subheader(f'Ensemble Prediction : {decoded_ensemble_prediction}')
     
-    st.write(f'AMP stands for Anti Microbial Proteins')
+    st.write(f'AMP stands for Anti Microbial Peptides')
