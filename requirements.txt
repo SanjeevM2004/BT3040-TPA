@@ -3,6 +3,6 @@ joblib
 pandas
 numpy
 scikit-learn
-concurrent-futures
+#concurrent-futures
 propy3
 openpyxl
