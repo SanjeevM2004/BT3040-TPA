@@ -6,3 +6,4 @@ scikit-learn
 #concurrent-futures
 propy3
 openpyxl
+catboost
