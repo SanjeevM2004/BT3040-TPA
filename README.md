@@ -37,9 +37,7 @@ This Streamlit application predicts Anti Microbial Peptides (AMPs) using multipl
     pip install -r requirements.txt
     ```
 
-4. Ensure you have the necessary model files (`svm_model.pkl`, `logistic_regression_model.pkl`, `decision_tree_model.pkl`, `catboost_model.pkl`, `label_encoder.pkl`) and PCA model files (`pca_5.pkl`, `pca_10.pkl`, `pca_20.pkl`, `decision_tree_pca_5.pkl`, `decision_tree_pca_10.pkl`, `decision_tree_pca_20.pkl`, `svm_pca_5.pkl`, `svm_pca_10.pkl`, `svm_pca_20.pkl`, `logistic_regression_pca_5.pkl`, `logistic_regression_pca_10.pkl`, `logistic_regression_pca_20.pkl`) in the same directory as the script.
-
-5. Place the `Feature_Information.xlsx` file in the same directory as the script.
+4. Place the `Feature_Information.xlsx` file in the same directory as the script.
 
 ## Usage
 
