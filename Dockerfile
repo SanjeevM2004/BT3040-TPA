@@ -1,6 +1,14 @@
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    libssl-dev \
+    libffi-dev \
+    python3-dev \
+    && rm -rf /var/lib/apt/lists/*
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -18,3 +26,4 @@ EXPOSE 8501
 
 # Run the application
 CMD ["streamlit", "run", "app.py"]
+
